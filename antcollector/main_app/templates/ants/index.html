@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ant List</h1>
+
+{% for ant in ants %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ ant.name }}</span>
+      <p>Breed: {{ ant.breed }}</p>
+      <p>Description: {{ ant.description }}</p>
+      {% if ant.age > 0 %}
+        <p>Age: {{ ant.age }}</p>
+      {% else %}
+        <p>Age: Anty</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
